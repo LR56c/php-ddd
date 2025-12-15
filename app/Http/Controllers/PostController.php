@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\ValueObject\UUIDError;
+use App\Domain\ValueObject\ValidUUID;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,6 +27,14 @@ class PostController extends Controller
      */
     public function index()
     {
+        $id = ValidUUID::create();
+
+        $mensaje = match ($id) {
+            UUIDError::InvalidFormat => 'El formato UUID no es correcto',
+            default => $id->value(),
+        };
+        echo ">>>> ".$mensaje;
+
         return response()->json(Post::all());
     }
 
