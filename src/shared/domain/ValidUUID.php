@@ -1,15 +1,10 @@
 <?php
 
-namespace App\Domain\ValueObject;
 
-use InvalidArgumentException;
+namespace Src\shared\domain;
+
 use Ramsey\Uuid\Uuid;
 use Stringable;
-
-enum UUIDError
-{
-    case InvalidFormat;
-}
 
 final readonly class ValidUUID implements Stringable
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\ValueObject;
+namespace Src\shared\domain;
 
 enum UUIDError
 {

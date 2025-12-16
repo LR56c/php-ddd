@@ -1,10 +1,11 @@
 <?php
 
 
-use App\Domain\ValueObject\UUIDError;
-use App\Domain\ValueObject\ValidUUID;
-use Illuminate\Support\Facades\Log;
+namespace Tests\Unit;
+
 use PHPUnit\Framework\TestCase;
+use Src\shared\domain\UUIDError;
+use Src\shared\domain\ValidUUID;
 
 class ValidUUIDTest extends TestCase
 {
