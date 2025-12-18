@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -13,3 +14,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::apiResource('posts', PostController::class);
+Route::apiResource('orders', OrderController::class);
